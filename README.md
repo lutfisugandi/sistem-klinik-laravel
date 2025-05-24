@@ -22,7 +22,7 @@ Sistem Manajemen Klinik adalah aplikasi web berbasis Laravel yang dirancang untu
 ## 📸 SCREENSHOTS
 
 ### Login Page
-<img src="screenshots/login.jph" alt="Login Page" width="400">
+<img src="screenshots/login.jpg" alt="Login Page" width="400">
 
 ## 🚀 QUICK START
 
