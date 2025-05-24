@@ -11,7 +11,7 @@
  Target Server Version : 100427
  File Encoding         : 65001
 
- Date: 24/05/2025 19:26:36
+ Date: 24/05/2025 20:34:39
 */
 
 SET NAMES utf8mb4;
@@ -67,7 +67,7 @@ CREATE TABLE `medical_records`  (
   INDEX `medical_records_visit_number_index`(`visit_number` ASC) USING BTREE,
   INDEX `medical_records_created_at_index`(`created_at` ASC) USING BTREE,
   CONSTRAINT `medical_records_patient_id_foreign` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of medical_records
@@ -79,6 +79,8 @@ INSERT INTO `medical_records` VALUES (4, 4, 'V202505240004', 'diagnosed', 52.50,
 INSERT INTO `medical_records` VALUES (5, 5, 'V202505240005', 'completed', 82.00, '150/95', 36.70, 92, 'Pusing, tengkuk kaku, mata berkunang-kunang, sering terjadi pagi hari', 'tes', 'tes', '2025-05-24 10:42:04', '2025-05-24 10:32:04', '2025-05-24 10:56:23', '2025-05-24 11:03:17', '2025-05-24 11:03:17', '2025-05-24 10:42:04', '2025-05-24 11:03:17');
 INSERT INTO `medical_records` VALUES (6, 1, 'V202505240006', 'diagnosed', 65.50, '120/80', 36.50, 70, 'Demam tinggi 3 hari, sakit kepala, mual muntah, badan lemas', 'Demam Berdarah Dengue (DBD) Grade I', 'Monitor trombosit, banyak minum air putih', '2025-05-24 10:45:19', '2025-05-24 10:47:16', '2025-05-24 10:50:35', NULL, NULL, '2025-05-24 10:45:19', '2025-05-24 10:50:35');
 INSERT INTO `medical_records` VALUES (7, 1, 'V202505240007', 'completed', 70.00, '140/90', 37.50, 85, 'Test keluhan', 'Test diagnosis', NULL, '2025-05-24 11:08:04', '2025-05-24 11:08:04', '2025-05-24 11:08:04', '2025-05-24 11:08:34', '2025-05-24 11:08:34', '2025-05-24 11:08:04', '2025-05-24 11:08:34');
+INSERT INTO `medical_records` VALUES (8, 9, 'V202505240008', 'vitals_checked', 65.50, '120/80', 36.50, 72, NULL, NULL, NULL, '2025-05-24 13:21:29', '2025-05-24 13:27:41', NULL, NULL, NULL, '2025-05-24 13:21:29', '2025-05-24 13:27:41');
+INSERT INTO `medical_records` VALUES (9, 8, 'V202505240009', 'registered', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-05-24 13:23:38', NULL, NULL, NULL, NULL, '2025-05-24 13:23:38', '2025-05-24 13:23:38');
 
 -- ----------------------------
 -- Table structure for medicines
@@ -174,7 +176,7 @@ CREATE TABLE `patients`  (
   INDEX `patients_name_index`(`name` ASC) USING BTREE,
   INDEX `patients_patient_number_index`(`patient_number` ASC) USING BTREE,
   INDEX `patients_phone_index`(`phone` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of patients
@@ -187,6 +189,7 @@ INSERT INTO `patients` VALUES (5, 'P20250524005', 'Dedi Kurniawan', '1982-09-30'
 INSERT INTO `patients` VALUES (6, 'P20250524006', 'Maya Sari', '1988-12-05', 'P', '08123456006', 'Jl. Cikini Raya No. 34, Jakarta Pusat', '2025-05-24 10:42:04', '2025-05-24 10:42:04');
 INSERT INTO `patients` VALUES (7, 'P20250524007', 'Hendra Wijaya', '1975-06-18', 'L', '08123456007', 'Jl. Senayan No. 56, Jakarta Pusat', '2025-05-24 10:42:04', '2025-05-24 10:42:04');
 INSERT INTO `patients` VALUES (8, 'P20250524008', 'Indah Permata', '1993-04-25', 'P', '08123456008', 'Jl. Kuningan No. 78, Jakarta Selatan', '2025-05-24 10:42:04', '2025-05-24 10:42:04');
+INSERT INTO `patients` VALUES (9, 'P20250524009', 'lucky', '2025-05-15', 'L', '0812345678', 'asia-afrika', '2025-05-24 13:15:27', '2025-05-24 13:15:27');
 
 -- ----------------------------
 -- Table structure for personal_access_tokens
@@ -272,7 +275,7 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'Dewi Sartika, A.Md.Keb', 'pendaftaran@klinik.com', NULL, '$2y$10$WMJ6orllyTkjp3UefMg5WuR0F51LpXmm5BYixxpJ.8Attte74IGlm', NULL, '2025-05-24 10:42:04', '2025-05-24 10:42:04', 'pendaftaran', '08123456789', 1);
+INSERT INTO `users` VALUES (1, 'Dewi Sartika, A.Md.Keb', 'pendaftaran@klinik.com', NULL, '$2y$10$WMJ6orllyTkjp3UefMg5WuR0F51LpXmm5BYixxpJ.8Attte74IGlm', 'IX3eUJKCbP0TIYpzZFViCCHzEqIxYDHTrfFVOplxR7J5kUJgpoCYeQtkctCM', '2025-05-24 10:42:04', '2025-05-24 10:42:04', 'pendaftaran', '08123456789', 1);
 INSERT INTO `users` VALUES (2, 'dr. Budi Rahardjo, Sp.PD', 'dokter@klinik.com', NULL, '$2y$10$oVR9AHYD0dZkVhHQbtR/vurs59zb/XdK3EZ9Z04/RnvTOkmUKrDBe', NULL, '2025-05-24 10:42:04', '2025-05-24 10:42:04', 'dokter', '08234567890', 1);
 INSERT INTO `users` VALUES (3, 'Ns. Siti Aminah, S.Kep', 'perawat@klinik.com', NULL, '$2y$10$0ZkWGPIcewGx.Sj1UOl1jeNEoI/K7rFC2DOFw0KoWHuX5dCiydpw6', NULL, '2025-05-24 10:42:04', '2025-05-24 10:42:04', 'perawat', '08345678901', 1);
 INSERT INTO `users` VALUES (4, 'Apt. Agus Salim, S.Farm', 'apoteker@klinik.com', NULL, '$2y$10$i/z3ZkJfBlmXSrio5cf.5.Y49k5vlGDhURNtK7b/2ZvIr1ta4BPJW', NULL, '2025-05-24 10:42:04', '2025-05-24 10:42:04', 'apoteker', '08456789012', 1);
