@@ -19,10 +19,48 @@ Sistem Manajemen Klinik adalah aplikasi web berbasis Laravel yang dirancang untu
 - 📋 **Medical Records**: Rekam medis lengkap dengan timeline progress
 - 🎨 **Modern UI/UX**: AdminLTE dengan medical theme
 
-## 📸 SCREENSHOTS
+📸 SCREENSHOTS
+🔐 Login
+<div align="left">
+  <img src="screenshots/login.jpg" alt="Login Page" width="200">
+</div>
+📝 Pendaftaran (Admin)
+<div align="left">
+  <img src="screenshots/pendaftaran - dashboard pendaftaran.jpg" alt="Dashboard Pendaftaran" width="200">
+  <img src="screenshots/pendaftaran - daftar pasien baru.jpg" alt="Daftar Pasien Baru" width="200">
+  <img src="screenshots/pendaftaran - data pasien.jpg" alt="Data Pasien" width="200">
+  <img src="screenshots/pendaftaran - rekam medis.jpg" alt="Rekam Medis" width="200">
+</div>
+👩‍⚕️ Perawat
+<div align="left">
+  <img src="screenshots/perawat - dashboard perawat.jpg" alt="Dashboard Perawat" width="200">
+  <img src="screenshots/perawat - input vital sign.jpg" alt="Input Vital Signs" width="200">
+  <img src="screenshots/perawat - rekam medis.jpg" alt="Rekam Medis Perawat" width="200">
+</div>
+👨‍⚕️ Dokter
+<div align="left">
+  <img src="screenshots/dokter - dashboard dokter.jpg" alt="Dashboard Dokter" width="200">
+  <img src="screenshots/dokter - data pasien.jpg" alt="Data Pasien Dokter" width="200">
+  <img src="screenshots/dokter - input diagnosis pasien.jpg" alt="Input Diagnosis" width="200">
+  <img src="screenshots/dokter - rekam medis pasien detail.jpg" alt="Detail Rekam Medis" width="200">
+</div>
+💊 Apoteker
+<div align="left">
+  <img src="screenshots/apoteker - dashboard apoteker.jpg" alt="Dashboard Apoteker" width="200">
+  <img src="screenshots/apoteker - data obat.jpg" alt="Data Obat" width="200">
+  <img src="screenshots/apoteker - input resep obat.jpg" alt="Input Resep Obat" width="200">
+  <img src="screenshots/apoteker - resep obat.jpg" alt="Resep Obat" width="200">
+  <img src="screenshots/apoteker - tambah obat.jpg" alt="Tambah Obat" width="200">
+</div>
 
-### Login Page
-<img src="screenshots/login.jpg" alt="Login Page" width="200">
+🎯 Complete Medical Workflow Preview
+<div align="center">
+  <img src="screenshots/login.jpg" alt="1. Login" width="150">
+  <img src="screenshots/pendaftaran - daftar pasien baru.jpg" alt="2. Pendaftaran" width="150">
+  <img src="screenshots/perawat - input vital sign.jpg" alt="3. Vital Signs" width="150">
+  <img src="screenshots/dokter - input diagnosis pasien.jpg" alt="4. Diagnosis" width="150">
+  <img src="screenshots/apoteker - input resep obat.jpg" alt="5. Prescription" width="150">
+</div>
 
 ## 🚀 QUICK START
 
