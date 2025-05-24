@@ -19,6 +19,11 @@ Sistem Manajemen Klinik adalah aplikasi web berbasis Laravel yang dirancang untu
 - 📋 **Medical Records**: Rekam medis lengkap dengan timeline progress
 - 🎨 **Modern UI/UX**: AdminLTE dengan medical theme
 
+## 📸 SCREENSHOTS
+
+### Login Page
+![Login](screenshots/login.jpg)
+
 ## 🚀 QUICK START
 
 ### Prerequisites
