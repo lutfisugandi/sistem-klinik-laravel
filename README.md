@@ -35,7 +35,7 @@ Sistem Manajemen Klinik adalah aplikasi web berbasis Laravel yang dirancang untu
 <div align="left">
   <img src="screenshots/perawat - dashboard perawat.jpg" alt="Dashboard Perawat" width="200">
   <img src="screenshots/perawat - input vital sign.jpg" alt="Input Vital Signs" width="200">
-  <img src="screenshots/perawat - rekam medis.jpg" alt="Rekam Medis Perawat" width="200">
+  <img src="screenshots/parawat - rekam medis.jpg" alt="Rekam Medis Perawat" width="200">
 </div>
 👨‍⚕️ Dokter
 <div align="left">
