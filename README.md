@@ -1,64 +1,320 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# 🏥 SISTEM MANAJEMEN KLINIK
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistem Informasi Klinik berbasis Laravel dengan Role-based Medical Workflow
 
-## About Laravel
+[![Laravel](https://img.shields.io/badge/Laravel-9.x-red.svg)](https://laravel.com/)
+[![PHP](https://img.shields.io/badge/PHP-8.0+-blue.svg)](https://php.net/)
+[![MySQL](https://img.shields.io/badge/MySQL-5.7+-orange.svg)](https://mysql.com/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📋 DESKRIPSI
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Sistem Manajemen Klinik adalah aplikasi web berbasis Laravel yang dirancang untuk mengelola workflow medis di klinik dengan sistem role-based authentication. Sistem ini memfasilitasi alur kerja lengkap dari pendaftaran pasien hingga pemberian resep obat.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Fitur Utama:
+- 🎭 **4 Role System**: Pendaftaran, Perawat, Dokter, Apoteker
+- 🔄 **Complete Medical Workflow**: Registration → Vital Signs → Diagnosis → Prescription → Completed
+- 💊 **Medicine Management**: Stock control dengan validasi real-time
+- 📊 **Professional Dashboard**: Statistik dan quick actions untuk setiap role
+- 📋 **Medical Records**: Rekam medis lengkap dengan timeline progress
+- 🎨 **Modern UI/UX**: AdminLTE dengan medical theme
 
-## Learning Laravel
+## 🚀 QUICK START
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Prerequisites
+- PHP 8.0+
+- Composer
+- MySQL 5.7+
+- Web Server (Apache/Nginx)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Installation
 
-## Laravel Sponsors
+1. **Clone Repository**
+   ```bash
+   git clone https://github.com/lutfisugandi/sistem-klinik-laravel.git
+   cd sistem-klinik-laravel
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+2. **Install Dependencies**
+   ```bash
+   composer install
+   ```
 
-### Premium Partners
+3. **Environment Setup**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+4. **Database Configuration**
+   
+   Edit file `.env`:
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=klinik_app
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
 
-## Contributing
+5. **Database Setup**
+   
+   **Opsi A: Menggunakan Migration & Seeding (Recommended)**
+   ```bash
+   php artisan migrate:fresh --seed
+   ```
+   
+   **Opsi B: Import Database SQL Dump**
+   ```bash
+   # Buat database terlebih dahulu
+   mysql -u root -p -e "CREATE DATABASE klinik_app;"
+   
+   # Import file SQL
+   mysql -u root -p klinik_app < database/sql/klinik_db.sql
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+6. **Start Server**
+   ```bash
+   php artisan serve
+   ```
 
-## Code of Conduct
+7. **Access Application**
+   ```
+   http://localhost:8000
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 🗄️ DATABASE INFORMATION
 
-## Security Vulnerabilities
+### Database Structure
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Sistem ini menggunakan database MySQL dengan struktur yang telah dioptimasi untuk workflow medis:
 
-## License
+#### Core Tables:
+- **users** - User authentication dengan role system
+- **patients** - Data pasien dengan auto-generate nomor
+- **medical_records** - Rekam medis dengan workflow status
+- **medicines** - Master data obat dengan stock management
+- **prescriptions** - Detail resep obat per kunjungan
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+#### Workflow Status:
+```
+registered → vitals_checked → diagnosed → prescribed → completed
+```
+
+### Database Files:
+- **Migrations**: `database/migrations/` - Schema database dalam format Laravel migration
+- **Seeders**: `database/seeders/` - Sample data untuk testing
+- **SQL Dump**: `database/sql/klinik_db.sql` - Complete database dump dengan structure dan data
+
+### Sample Data Include:
+- ✅ 4 Staff medis dengan role berbeda
+- ✅ 8 Pasien sample dengan history
+- ✅ 12 Obat umum Indonesia (Paracetamol, Amoxicillin, dll)
+- ✅ 5 Medical records dengan berbagai status workflow
+
+### Database Restore:
+Jika menggunakan SQL dump, file `database/sql/klinik_db.sql` berisi:
+- Complete table structure
+- Sample data untuk testing
+- Indexes dan constraints
+- Default users dengan password
+
+## 👥 LOGIN CREDENTIALS
+
+| Role | Email | Password | Akses |
+|------|-------|----------|-------|
+| Admin Pendaftaran | pendaftaran@klinik.com | password | Daftar pasien, buat kunjungan |
+| Perawat | perawat@klinik.com | password | Input vital signs |
+| Dokter | dokter@klinik.com | password | Input diagnosis |
+| Apoteker | apoteker@klinik.com | password | Kelola obat & resep |
+
+## 🔄 MEDICAL WORKFLOW
+
+### 1. Pendaftaran Pasien
+- Admin mendaftarkan pasien baru
+- Buat kunjungan baru untuk pasien existing
+- Auto-generate nomor pasien & kunjungan
+
+### 2. Vital Signs (Perawat)
+- Input berat badan, tekanan darah, suhu, nadi
+- Auto-calculate BMI
+- Real-time warning untuk nilai abnormal
+- Validasi input dengan panduan medis
+
+### 3. Diagnosis (Dokter)
+- Input keluhan dan diagnosis pasien
+- Quick templates untuk diagnosis umum
+- Deteksi kondisi urgent dari vital signs
+- Catatan dan rencana tindak lanjut
+
+### 4. Prescription (Apoteker)
+- Buat resep obat berdasarkan diagnosis
+- Dynamic medicine selection dengan stock validation
+- Auto-calculate total biaya
+- Stock management otomatis
+
+## 🎯 TESTING GUIDE
+
+### Complete Workflow Test:
+1. Login sebagai **Pendaftaran** → Daftar pasien baru
+2. Login sebagai **Perawat** → Input vital signs
+3. Login sebagai **Dokter** → Input diagnosis
+4. Login sebagai **Apoteker** → Buat resep obat
+
+### Key Features to Test:
+- ✅ Real-time validation (vital signs abnormal, stock check)
+- ✅ Auto-calculations (BMI, total harga obat)
+- ✅ Dynamic forms (add/remove medicine rows)
+- ✅ Quick templates (diagnosis & prescription presets)
+- ✅ Role-based access (menu visibility per role)
+
+## 🛠️ TECHNICAL SPECIFICATIONS
+
+### Backend:
+- **Framework**: Laravel 9.x
+- **Language**: PHP 8.0+
+- **Database**: MySQL with Eloquent ORM
+- **Authentication**: Laravel built-in auth
+- **Validation**: Server-side validation
+
+### Frontend:
+- **Template**: AdminLTE 3.2
+- **CSS Framework**: Bootstrap 4
+- **Icons**: Font Awesome 6
+- **JavaScript**: jQuery + Custom scripts
+- **Theme**: Custom medical theme
+
+### Key Laravel Features Used:
+- Eloquent Relationships
+- Migration & Seeding
+- Request Validation
+- Route Model Binding
+- Middleware Authentication
+- Blade Templating
+
+## 📁 PROJECT STRUCTURE
+
+```
+app/
+├── Http/Controllers/
+│   ├── DashboardController.php
+│   ├── MedicalRecordController.php
+│   ├── MedicineController.php
+│   ├── PatientController.php
+│   └── Auth/
+├── Models/
+│   ├── User.php
+│   ├── Patient.php
+│   ├── MedicalRecord.php
+│   ├── Medicine.php
+│   └── Prescription.php
+
+resources/views/
+├── layouts/app.blade.php
+├── auth/login.blade.php
+├── dashboard/
+├── medical-records/
+│   ├── vitals/
+│   ├── diagnosis/
+│   └── prescriptions/
+├── medicines/
+└── patients/
+
+database/
+├── migrations/
+├── seeders/DatabaseSeeder.php
+└── sql/
+    └── klinik_db.sql
+```
+
+## 🔧 CONFIGURATION
+
+### Environment Variables:
+```env
+APP_NAME="Sistem Klinik"
+APP_URL=http://localhost
+DB_DATABASE=klinik_app
+```
+
+### Key Configurations:
+- **Timezone**: Asia/Jakarta (configurable)
+- **Language**: Indonesian interface
+- **Session**: File-based sessions
+- **Pagination**: 15 items per page
+
+## 🚨 TROUBLESHOOTING
+
+### Common Issues:
+
+1. **Migration Error**:
+   ```bash
+   php artisan migrate:fresh --seed
+   ```
+
+2. **Permission Errors**:
+   ```bash
+   chmod -R 775 storage bootstrap/cache
+   ```
+
+3. **Key Not Found**:
+   ```bash
+   php artisan key:generate
+   ```
+
+4. **Composer Issues**:
+   ```bash
+   composer install --ignore-platform-reqs
+   ```
+
+5. **Database Connection Error**:
+   - Pastikan MySQL service berjalan
+   - Cek konfigurasi database di file `.env`
+   - Pastikan database `klinik_app` sudah dibuat
+
+## 📈 FEATURES ROADMAP
+
+### Phase 2 Enhancements:
+- [ ] **Appointment Scheduling** - Jadwal appointment pasien
+- [ ] **Medical Reports** - Generate PDF reports
+- [ ] **Analytics Dashboard** - Chart & statistics
+- [ ] **Notification System** - Real-time alerts
+- [ ] **Mobile App** - React Native companion
+- [ ] **Telemedicine** - Video consultation feature
+
+## 👨‍💻 DEVELOPER INFO
+
+**Developed by**: Lutfi Rosyad Sugandi  
+**Contact**: lutfirosyadsugandi@gmail.com  
+**Version**: 1.0.0  
+**Last Updated**: May 2025  
+
+### Contributing:
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Open Pull Request
+
+## 📄 LICENSE
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 ACKNOWLEDGMENTS
+
+- Laravel Framework
+- AdminLTE Template
+- Font Awesome Icons
+- Bootstrap Framework
+- Indonesian Medical Community
+
+---
+
+⭐ **Jika project ini berguna, jangan lupa berikan star di GitHub!**
+
+## 📞 SUPPORT
+
+Jika Anda mengalami masalah atau memiliki pertanyaan:
+1. Cek bagian [Troubleshooting](#-troubleshooting)
+2. Buka [Issues](https://github.com/lutfisugandi/sistem-klinik-laravel/issues) di GitHub
+3. Hubungi developer: lutfirosyadsugandi@gmail.com
